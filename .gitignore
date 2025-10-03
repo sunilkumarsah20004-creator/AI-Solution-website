@@ -1,0 +1,18 @@
+# Python env & OS
+.venv/
+*.pyc
+__pycache__/
+.DS_Store
+
+# Editor
+.vscode/
+
+# Django artifacts
+.env
+db.sqlite3
+media/
+
+
+# Ignore Django migrations but keep package marker
+**/migrations/*
+!**/migrations/__init__.py

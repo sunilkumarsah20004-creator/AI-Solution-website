@@ -1,0 +1,405 @@
+[
+  {
+    "model": "base.softwaresolution",
+    "pk": 1,
+    "fields": {
+      "title": "AI Chat Support",
+      "slug": "ai-chat-support",
+      "image": null,
+      "description": "An AI customer-support system with intent detection, RAG over a verified knowledge base, workflow automation (booking/status), human handoff with full transcript, and analytics (CSAT, containment, response time). Omnichannel via web/WhatsApp/Messenger.",
+      "published_at": "2025-08-01T10:00:00Z",
+      "created_by": null,
+      "created_at": "2025-08-01T10:00:00Z",
+      "updated_at": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.softwaresolution",
+    "pk": 2,
+    "fields": {
+      "title": "Predictive Sales Assistant",
+      "slug": "predictive-sales-assistant",
+      "image": null,
+      "description": "Sales intelligence that forecasts purchase intent and churn, recommends next-best-actions, and syncs tasks to CRM/calendar. Includes cohort dashboards and A/B testing to measure lift.",
+      "published_at": "2025-08-05T09:00:00Z",
+      "created_by": null,
+      "created_at": "2025-08-05T09:00:00Z",
+      "updated_at": "2025-08-05T09:00:00Z"
+    }
+  },
+  {
+    "model": "base.softwaresolution",
+    "pk": 3,
+    "fields": {
+      "title": "Smart Document Analyzer",
+      "slug": "smart-document-analyzer",
+      "image": null,
+      "description": "NLP pipeline for PDFs and docs: OCR, text normalization, entity extraction, clause/risk highlighting, and executive summaries. Exposes API and a reviewer UI with side-by-side highlights.",
+      "published_at": "2025-08-08T08:30:00Z",
+      "created_by": null,
+      "created_at": "2025-08-08T08:30:00Z",
+      "updated_at": "2025-08-08T08:30:00Z"
+    }
+  },
+  {
+    "model": "base.softwaresolution",
+    "pk": 4,
+    "fields": {
+      "title": "Vision-based Quality Inspection",
+      "slug": "vision-quality-inspection",
+      "image": null,
+      "description": "Real-time computer vision for detecting scratches, dents, misalignments, and missing parts. Supports edge inference, operator feedback loops, and integration with MES/ERP.",
+      "published_at": "2025-08-12T07:45:00Z",
+      "created_by": null,
+      "created_at": "2025-08-12T07:45:00Z",
+      "updated_at": "2025-08-12T07:45:00Z"
+    }
+  },
+  {
+    "model": "base.softwaresolution",
+    "pk": 5,
+    "fields": {
+      "title": "Healthcare Diagnostics AI",
+      "slug": "healthcare-diagnostics-ai",
+      "image": null,
+      "description": "Clinical decision-support: imaging pre-screen, symptom checker, and risk scoring with clinician-in-the-loop review, audit logs, and calibration monitoring.",
+      "published_at": "2025-08-15T06:15:00Z",
+      "created_by": null,
+      "created_at": "2025-08-15T06:15:00Z",
+      "updated_at": "2025-08-15T06:15:00Z"
+    }
+  },
+
+  {
+    "model": "base.casestudy",
+    "pk": 1,
+    "fields": {
+      "title": "Support Efficiency Boost",
+      "slug": "support-efficiency-boost",
+      "summary": "Deployed AI chat to cut first-response times and improve containment during festival peaks.",
+      "problem": "Long first-response times, fragmented knowledge, and inconsistent handoffs led to ticket backlogs and low CSAT.",
+      "solution": "Implemented an AI chat layer grounded on curated KB (RAG), with escalation to agents including full transcript context.",
+      "results": "63% faster first response in 2 weeks; +9pt CSAT; 42% self-serve containment.",
+      "client_name": "Aarav Shrestha",
+      "client_company": "Himalayan Support Pvt. Ltd.",
+      "client_job_title": "Operations Lead",
+      "image": null,
+      "published_at": "2025-08-02T10:00:00Z",
+      "created_by": null,
+      "solutions": [1],
+      "created_at": "2025-08-02T10:00:00Z",
+      "updated_at": "2025-08-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.casestudy",
+    "pk": 2,
+    "fields": {
+      "title": "Sales Pipeline Lift",
+      "slug": "sales-pipeline-lift",
+      "summary": "Lead scoring and churn prediction to focus reps on the highest-impact actions.",
+      "problem": "Reps had no reliable way to prioritize leads; late follow-ups hurt conversions.",
+      "solution": "Cleaned CRM data, trained intent/churn models, and pushed next-best-actions to CRM + calendar with reminders.",
+      "results": "28% increase in qualified leads; faster cycle time; higher win rate in priority segments.",
+      "client_name": "S. Adhikari",
+      "client_company": "Everest Retail Group",
+      "client_job_title": "Sales Manager",
+      "image": null,
+      "published_at": "2025-08-06T09:00:00Z",
+      "created_by": null,
+      "solutions": [2],
+      "created_at": "2025-08-06T09:00:00Z",
+      "updated_at": "2025-08-06T09:00:00Z"
+    }
+  },
+  {
+    "model": "base.casestudy",
+    "pk": 3,
+    "fields": {
+      "title": "Contract Review Acceleration",
+      "slug": "contract-review-acceleration",
+      "summary": "Automated contract summaries and risk highlights for faster legal prep.",
+      "problem": "Lawyers manually reviewed large contracts, delaying case preparation.",
+      "solution": "Built OCR → NER → clause/risk detection pipeline with executive summaries and reviewer UI.",
+      "results": "Review time cut from hours to minutes; improved consistency across teams.",
+      "client_name": "R. Karki",
+      "client_company": "Nepal Legal Associates",
+      "client_job_title": "Senior Associate",
+      "image": null,
+      "published_at": "2025-08-09T08:30:00Z",
+      "created_by": null,
+      "solutions": [3],
+      "created_at": "2025-08-09T08:30:00Z",
+      "updated_at": "2025-08-09T08:30:00Z"
+    }
+  },
+  {
+    "model": "base.casestudy",
+    "pk": 4,
+    "fields": {
+      "title": "Manufacturing Defect Reduction",
+      "slug": "manufacturing-defect-reduction",
+      "summary": "Edge vision with anomaly detection reduced defects and improved throughput.",
+      "problem": "Manual inspection missed subtle defects and slowed the line.",
+      "solution": "Installed cameras at key stations; ran object detection/anomaly models with operator feedback loop.",
+      "results": "35% defect reduction; better traceability via MES/ERP integration.",
+      "client_name": "M. Lama",
+      "client_company": "Kathmandu Manufacturing Co.",
+      "client_job_title": "Quality Head",
+      "image": null,
+      "published_at": "2025-08-13T07:45:00Z",
+      "created_by": null,
+      "solutions": [4],
+      "created_at": "2025-08-13T07:45:00Z",
+      "updated_at": "2025-08-13T07:45:00Z"
+    }
+  },
+  {
+    "model": "base.casestudy",
+    "pk": 5,
+    "fields": {
+      "title": "Clinical Triage Improvement",
+      "slug": "clinical-triage-improvement",
+      "summary": "AI-assisted imaging and symptom analysis to support clinician decisions.",
+      "problem": "High patient volume and limited time increased triage variability.",
+      "solution": "Combined EHR fields with imaging pre-screens; risk scores with conservative rules and full audit trail.",
+      "results": "17% improvement in triage accuracy; faster prioritization in busy clinics.",
+      "client_name": "Dr. P. Gurung",
+      "client_company": "Maya Health Network",
+      "client_job_title": "Medical Director",
+      "image": null,
+      "published_at": "2025-08-16T06:15:00Z",
+      "created_by": null,
+      "solutions": [5],
+      "created_at": "2025-08-16T06:15:00Z",
+      "updated_at": "2025-08-16T06:15:00Z"
+    }
+  },
+
+  {
+    "model": "base.article",
+    "pk": 1,
+    "fields": {
+      "title": "AI Chat Support: Revolutionizing Customer Service",
+      "slug": "ai-chat-support-revolutionizing-customer-service",
+      "content": "AI Chat Support is an intelligent customer service system powered by artificial intelligence. It provides instant responses to customer queries, reduces response times, and ensures 24/7 availability. By integrating natural language processing, AI Chat Support understands customer intent and delivers accurate answers, freeing support teams from repetitive tasks and improving customer satisfaction.\n\nOur AI Chat Support system features:\n\n- Natural Language Understanding: Advanced NLP capabilities to understand customer queries in context\n- 24/7 Availability: Round-the-clock customer support without human intervention\n- Seamless Integration: Easy integration with existing CRM and support systems\n- Analytics Dashboard: Comprehensive insights into customer interactions and satisfaction\n- Multi-channel Support: Works across web, mobile, and social media platforms\n\nThe system has helped our clients reduce response times by 70% and increase customer satisfaction scores by 35%. By automating routine queries, support teams can focus on complex issues that require human expertise.",
+      "excerpt": "AI Chat Support uses AI to deliver fast, accurate, and always-available customer support, reducing response times by 70%.",
+      "status": "published",
+      "image": null,
+      "published_at": "2025-08-01T10:00:00Z",
+      "author": 1,
+      "created_at": "2025-08-01T10:00:00Z",
+      "updated_at": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.article",
+    "pk": 2,
+    "fields": {
+      "title": "Unlocking Business Potential with AI-Powered Solutions",
+      "slug": "unlocking-business-potential-with-ai-powered-solutions",
+      "content": "Artificial Intelligence is now one of the most powerful enablers of business transformation. At AI-Solutions, we help organizations achieve efficiency and growth through workflow automation, predictive insights, conversational AI, and smart recommendations. Our solutions are built on scalable frameworks and designed with human-centric principles to ensure technology empowers people rather than replacing them.\n\nKey areas where AI is transforming business:\n\n- Process Automation: Streamlining repetitive tasks and workflows\n- Predictive Analytics: Forecasting trends and customer behavior\n- Intelligent Decision Making: Data-driven insights for better business decisions\n- Customer Experience: Personalized interactions and support\n- Operational Efficiency: Optimizing resource allocation and reducing costs\n\nOur approach focuses on creating AI solutions that augment human capabilities rather than replace them. We believe in responsible AI development that prioritizes transparency, fairness, and ethical considerations.",
+      "excerpt": "Discover how AI-Solutions transforms workflows, empowers employees, and drives smarter business decisions through responsible AI.",
+      "status": "published",
+      "image": null,
+      "published_at": "2025-08-02T10:00:00Z",
+      "author": 1,
+      "created_at": "2025-08-02T10:00:00Z",
+      "updated_at": "2025-08-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.article",
+    "pk": 3,
+    "fields": {
+      "title": "Designing People-First AI Assistants",
+      "slug": "designing-people-first-ai-assistants",
+      "content": "AI assistants are transforming the way employees and customers interact with technology. At AI-Solutions, we design people-first AI assistants that focus on empathy, accuracy, and usability. These assistants don't just answer questions—they guide, recommend, and learn over time to create seamless digital experiences. By blending natural language understanding with business-specific knowledge, we ensure our assistants deliver real value in every interaction.\n\nOur design principles for AI assistants:\n\n- Empathy First: Understanding user emotions and context\n- Transparency: Clear communication about AI capabilities and limitations\n- Continuous Learning: Adapting to user preferences and feedback\n- Accessibility: Ensuring inclusive design for all users\n- Privacy Protection: Safeguarding user data and maintaining trust\n\nWe've seen remarkable results with our AI assistants, including 85% user satisfaction rates and 60% reduction in task completion time. The key is balancing technological sophistication with human-centered design.",
+      "excerpt": "AI-Solutions builds people-first AI assistants that are empathetic, accurate, and business-aware, achieving 85% user satisfaction.",
+      "status": "published",
+      "image": null,
+      "published_at": "2025-08-03T10:00:00Z",
+      "author": 1,
+      "created_at": "2025-08-03T10:00:00Z",
+      "updated_at": "2025-08-03T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.article",
+    "pk": 4,
+    "fields": {
+      "title": "The Future of Machine Learning in Healthcare",
+      "slug": "future-of-machine-learning-in-healthcare",
+      "content": "Machine learning is revolutionizing healthcare by enabling more accurate diagnoses, personalized treatments, and improved patient outcomes. From medical imaging analysis to drug discovery, AI is transforming every aspect of healthcare delivery.\n\nKey applications of ML in healthcare:\n\n- Medical Imaging: AI-powered analysis of X-rays, MRIs, and CT scans\n- Drug Discovery: Accelerating the development of new medications\n- Predictive Analytics: Identifying patients at risk of developing conditions\n- Personalized Medicine: Tailoring treatments to individual patients\n- Robotic Surgery: Assisting surgeons with precision procedures\n\nOur healthcare AI solutions have helped medical professionals reduce diagnostic errors by 40% and improve treatment outcomes by 25%. We work closely with healthcare providers to ensure our solutions meet the highest standards of safety and efficacy.\n\nAs we look to the future, we see AI becoming an integral part of healthcare, not as a replacement for human expertise, but as a powerful tool that enhances the capabilities of medical professionals.",
+      "excerpt": "Machine learning is revolutionizing healthcare with AI-powered diagnostics, personalized treatments, and improved patient outcomes.",
+      "status": "published",
+      "image": null,
+      "published_at": "2025-08-10T09:00:00Z",
+      "author": 1,
+      "created_at": "2025-08-10T09:00:00Z",
+      "updated_at": "2025-08-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "base.article",
+    "pk": 5,
+    "fields": {
+      "title": "Building Ethical AI: A Guide for Businesses",
+      "slug": "building-ethical-ai-guide-for-businesses",
+      "content": "As AI becomes more prevalent in business operations, the importance of ethical AI development cannot be overstated. Organizations must prioritize fairness, transparency, and accountability in their AI systems to build trust and ensure positive outcomes.\n\nKey principles of ethical AI:\n\n- Fairness: Ensuring AI systems don't discriminate against any group\n- Transparency: Making AI decision-making processes understandable\n- Privacy: Protecting user data and maintaining confidentiality\n- Accountability: Taking responsibility for AI system outcomes\n- Human Oversight: Maintaining human control over AI decisions\n\nAt AI-Solutions, we've developed a comprehensive framework for ethical AI development that includes:\n\n- Bias detection and mitigation tools\n- Explainable AI techniques\n- Privacy-preserving machine learning methods\n- Regular audits and assessments\n- Stakeholder engagement processes\n\nOur commitment to ethical AI has earned us recognition from industry leaders and helped our clients build trustworthy AI systems that deliver value while maintaining the highest ethical standards.",
+      "excerpt": "Learn how to build ethical AI systems that prioritize fairness, transparency, and accountability in business applications.",
+      "status": "published",
+      "image": null,
+      "published_at": "2025-08-15T11:00:00Z",
+      "author": 1,
+      "created_at": "2025-08-15T11:00:00Z",
+      "updated_at": "2025-08-15T11:00:00Z"
+    }
+  },
+  {
+    "model": "base.article",
+    "pk": 6,
+    "fields": {
+      "title": "Natural Language Processing: Breaking Down Language Barriers",
+      "slug": "natural-language-processing-breaking-language-barriers",
+      "content": "Natural Language Processing (NLP) is one of the most exciting areas of AI, enabling computers to understand, interpret, and generate human language. From chatbots to translation services, NLP is breaking down language barriers and making technology more accessible to people worldwide.\n\nNLP applications in business:\n\n- Sentiment Analysis: Understanding customer emotions and opinions\n- Language Translation: Real-time translation across multiple languages\n- Text Summarization: Automatically generating concise summaries\n- Voice Recognition: Converting speech to text accurately\n- Content Generation: Creating human-like text content\n\nOur NLP solutions have helped businesses:\n\n- Process customer feedback 10x faster\n- Support customers in 15+ languages\n- Generate content at scale\n- Improve search and discovery\n- Enhance user experiences\n\nThe future of NLP looks promising, with advances in transformer models and large language models opening up new possibilities for human-computer interaction. We're excited to be at the forefront of these developments.",
+      "excerpt": "NLP is revolutionizing human-computer interaction, enabling businesses to process language, understand sentiment, and break down communication barriers.",
+      "status": "published",
+      "image": null,
+      "published_at": "2025-08-20T14:30:00Z",
+      "author": 1,
+      "created_at": "2025-08-20T14:30:00Z",
+      "updated_at": "2025-08-20T14:30:00Z"
+    }
+  },
+  {
+    "model": "base.article",
+    "pk": 7,
+    "fields": {
+      "title": "Computer Vision: Seeing the World Through AI Eyes",
+      "slug": "computer-vision-seeing-world-through-ai-eyes",
+      "content": "Computer vision is enabling machines to interpret and understand visual information from the world around us. From autonomous vehicles to medical imaging, computer vision is transforming industries and creating new possibilities for human-machine interaction.\n\nKey computer vision applications:\n\n- Autonomous Vehicles: Enabling self-driving cars to navigate safely\n- Medical Imaging: Assisting doctors in diagnosing diseases\n- Quality Control: Inspecting products in manufacturing\n- Security Systems: Monitoring and identifying threats\n- Augmented Reality: Overlaying digital information on real-world views\n\nOur computer vision solutions have delivered impressive results:\n\n- 95% accuracy in defect detection for manufacturing\n- 50% faster medical diagnosis\n- 80% reduction in false security alarms\n- 30% improvement in autonomous vehicle safety\n\nAs computer vision technology continues to advance, we're seeing new applications emerge in areas like agriculture, retail, and entertainment. The future is bright for this transformative technology.",
+      "excerpt": "Computer vision is revolutionizing how machines see and understand the world, with applications from autonomous vehicles to medical imaging.",
+      "status": "published",
+      "image": null,
+      "published_at": "2025-08-25T16:45:00Z",
+      "author": 1,
+      "created_at": "2025-08-25T16:45:00Z",
+      "updated_at": "2025-08-25T16:45:00Z"
+    }
+  },
+  {
+    "model": "base.article",
+    "pk": 8,
+    "fields": {
+      "title": "AI in Finance: Transforming the Financial Industry",
+      "slug": "ai-in-finance-transforming-financial-industry",
+      "content": "The financial industry is experiencing a digital transformation powered by artificial intelligence. From fraud detection to algorithmic trading, AI is revolutionizing how financial services are delivered and consumed.\n\nAI applications in finance:\n\n- Fraud Detection: Identifying suspicious transactions in real-time\n- Algorithmic Trading: Making data-driven investment decisions\n- Credit Scoring: Assessing borrower risk more accurately\n- Robo-Advisors: Providing automated investment advice\n- Risk Management: Predicting and mitigating financial risks\n\nOur financial AI solutions have helped institutions:\n\n- Reduce fraud losses by 60%\n- Improve credit scoring accuracy by 35%\n- Increase trading efficiency by 45%\n- Enhance customer experience significantly\n- Comply with regulatory requirements\n\nThe financial sector's adoption of AI is accelerating, with institutions investing heavily in AI capabilities to stay competitive. We're proud to be part of this transformation, helping financial organizations leverage AI for better outcomes.",
+      "excerpt": "AI is transforming finance through fraud detection, algorithmic trading, and risk management, helping institutions improve efficiency and security.",
+      "status": "published",
+      "image": null,
+      "published_at": "2025-08-30T10:15:00Z",
+      "author": 1,
+      "created_at": "2025-08-30T10:15:00Z",
+      "updated_at": "2025-08-30T10:15:00Z"
+    }
+  },
+
+  {
+    "model": "base.event",
+    "pk": 1,
+    "fields": {
+      "title": "AI Summit 2025",
+      "description": "A global summit exploring AI in business, healthcare, and education.",
+      "slug": "ai-summit-2025",
+      "starts_at": "2025-10-15T09:00:00Z",
+      "ends_at": "2025-10-15T17:00:00Z",
+      "location": "London, UK",
+      "is_public": true,
+      "created_by": null,
+      "created_at": "2025-09-01T10:00:00Z",
+      "updated_at": "2025-09-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.event",
+    "pk": 2,
+    "fields": {
+      "title": "Hackathon Weekend",
+      "description": "48 hours of coding, design, and innovation for students and professionals.",
+      "slug": "hackathon-weekend",
+      "starts_at": "2025-11-01T18:00:00Z",
+      "ends_at": "2025-11-03T12:00:00Z",
+      "location": "San Francisco, CA",
+      "is_public": true,
+      "created_by": null,
+      "created_at": "2025-09-02T10:00:00Z",
+      "updated_at": "2025-09-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.event",
+    "pk": 3,
+    "fields": {
+      "title": "Product Launch – AI-Solutions X",
+      "description": "Official launch of our new AI-Solutions X platform with live demos.",
+      "slug": "product-launch-ai-solutions-x",
+      "starts_at": "2025-12-05T14:00:00Z",
+      "ends_at": "2025-12-05T16:00:00Z",
+      "location": "Online Webinar",
+      "is_public": true,
+      "created_by": 1,
+      "created_at": "2025-09-03T10:00:00Z",
+      "updated_at": "2025-09-03T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.event",
+    "pk": 4,
+    "fields": {
+      "title": "Tech Meetup – Sunderland",
+      "description": "Monthly networking meetup for developers, designers, and founders.",
+      "slug": "tech-meetup-sunderland",
+      "starts_at": "2025-09-25T18:30:00Z",
+      "ends_at": "2025-09-25T21:00:00Z",
+      "location": "Sunderland, UK",
+      "is_public": true,
+      "created_by": null,
+      "created_at": "2025-09-04T10:00:00Z",
+      "updated_at": "2025-09-04T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.event",
+    "pk": 5,
+    "fields": {
+      "title": "End-of-Year Celebration",
+      "description": "A wrap-up celebration with highlights from our projects in 2025.",
+      "slug": "end-of-year-celebration",
+      "starts_at": "2025-12-30T19:00:00Z",
+      "ends_at": "2025-12-30T23:59:00Z",
+      "location": "New York, USA",
+      "is_public": true,
+      "created_by": null,
+      "created_at": "2025-09-05T10:00:00Z",
+      "updated_at": "2025-09-05T10:00:00Z"
+    }
+  },
+
+  {
+    "model": "base.event",
+    "pk": 6,
+    "fields": {
+      "title": "AI-Solutions X",
+      "description": "Official launch of our new AI-Solutions X platform with live demos.",
+      "slug": "ai-solutions-x",
+      "starts_at": "2025-12-30T19:00:00Z",
+      "ends_at": "2025-12-30T23:59:00Z",
+      "location": "Online Webinar",
+      "is_public": true,
+      "created_by": null,
+      "created_at": "2025-09-06T10:00:00Z",
+      "updated_at": "2025-09-06T10:00:00Z"
+    }
+  }
+]

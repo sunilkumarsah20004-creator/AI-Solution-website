@@ -1,0 +1,16 @@
+<!-- Simple Toast Message -->
+<div
+  class="toast-item toast-enter flex items-center justify-between max-w-sm p-4 mb-3 rounded-lg shadow-lg text-sm font-medium pointer-events-auto {% if color == 'green' %}bg-green-500 text-white{% elif color == 'red' %}bg-red-500 text-white{% elif color == 'yellow' %}bg-yellow-500 text-white{% elif color == 'blue' %}bg-blue-500 text-white{% else %}bg-gray-500 text-white{% endif %}"
+  role="alert"
+>
+  <span>{{ text }}</span>
+
+  <button
+    type="button"
+    class="toast-close ml-4 text-white hover:text-gray-200 font-bold text-lg"
+    aria-label="Close"
+    onclick="closeToast(this)"
+  >
+    ×
+  </button>
+</div>

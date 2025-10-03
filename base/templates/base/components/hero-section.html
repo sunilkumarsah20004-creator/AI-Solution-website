@@ -1,0 +1,128 @@
+<!-- load static -->
+{% load static %}
+
+<section
+  id="home"
+  class="relative min-h-screen flex items-center justify-center py-12 bg-gray-900"
+>
+  <!-- Simple Background -->
+  <div
+    class="absolute inset-0 bg-[url('{% static 'base/images/hero-image.png' %}')] bg-cover bg-center bg-no-repeat"
+  ></div>
+
+  <!-- Simple overlay -->
+  <div class="absolute inset-0 bg-gray-800/70"></div>
+
+  <!-- Enhanced Content -->
+  <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+    <!-- Simple Badge -->
+    <div class="mb-8">
+      <div
+        class="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-6 py-3 rounded-lg text-sm font-medium mb-6"
+      >
+        <div
+          class="flex items-center justify-center w-6 h-6 bg-blue-600 rounded"
+        >
+          <i class="ri-sparkling-2-line text-white text-sm"></i>
+        </div>
+        <span class="text-white font-medium"> AI Solutions Platform </span>
+      </div>
+    </div>
+
+    <!-- Simple Main Heading -->
+    <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+      <span class="block text-white mb-2">Build Better</span>
+      <span class="block text-blue-400"> Digital Experiences </span>
+    </h1>
+
+    <!-- Simple Description -->
+    <p
+      class="text-md md:text-lg text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+    >
+      Resolve friction before it slows your teams. Automate support, streamline
+      workflows, and ship faster with an AI assistant made for product &
+      engineering excellence.
+    </p>
+
+    <!-- Simple CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+      <a
+        href="#contact"
+        class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center gap-2"
+      >
+        Talk to an expert
+        <i class="ri-arrow-right-line"></i>
+      </a>
+      <a
+        href="#solutions"
+        class="px-8 py-4 border-2 border-white/30 hover:border-white/50 text-white font-semibold rounded-lg transition-colors duration-200 hover:bg-white/10 flex items-center gap-2"
+      >
+        Explore solutions
+        <i class="ri-compass-line"></i>
+      </a>
+    </div>
+
+    <!-- Simple Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div
+        class="group flex flex-col items-center gap-3 p-6 bg-gray-100 rounded-xl border border-gray-200 shadow-md transition-all duration-300 hover:bg-blue-600 hover:shadow-lg"
+      >
+        <div
+          class="flex items-center justify-center w-12 h-12 bg-blue-600 group-hover:bg-white rounded-lg"
+        >
+          <i
+            class="ri-shield-check-line text-white group-hover:text-blue-600 text-xl"
+          ></i>
+        </div>
+        <div class="text-center">
+          <h3 class="font-semibold text-black mb-1 group-hover:text-white">
+            Enterprise-grade
+          </h3>
+          <p class="text-sm text-gray-700 group-hover:text-white">
+            Secure & scalable solutions
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="group flex flex-col items-center gap-3 p-6 bg-gray-100 rounded-xl border border-gray-200 shadow-md transition-all duration-300 hover:bg-blue-600 hover:shadow-lg"
+      >
+        <div
+          class="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-lg transition-colors duration-300 group-hover:bg-white"
+        >
+          <i
+            class="ri-robot-2-line text-white text-xl group-hover:text-blue-600"
+          ></i>
+        </div>
+        <div class="text-center transition-colors duration-300">
+          <h3 class="font-semibold text-black mb-1 group-hover:text-white">
+            AI Assistant
+          </h3>
+          <p class="text-sm text-gray-700 group-hover:text-gray-200">
+            Intelligent automation
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="group flex flex-col items-center gap-3 p-6 bg-gray-100 rounded-xl border border-gray-200 shadow-md transition-all duration-300 hover:bg-blue-600 hover:shadow-lg"
+      >
+        <div
+          class="flex items-center justify-center w-12 h-12 bg-blue-600 group-hover:bg-white rounded-lg"
+        >
+          <i
+            class="ri-flashlight-line text-white group-hover:text-blue-600 text-xl"
+          ></i>
+        </div>
+        <div class="text-center">
+          <h3 class="font-semibold text-black mb-1 group-hover:text-white">
+            Fast Prototyping
+          </h3>
+          <p class="text-sm text-gray-800 group-hover:text-white">
+            Rapid development cycle
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,271 @@
+{% extends "base/layout/details_page.html" %}
+
+<!-- load static -->
+{% load static %}
+
+<!-- title -->
+{% block title %}{{ article.title }} - Article | AI Solutions{% endblock %}
+
+<!-- content -->
+{% block content %}
+<!-- Simplified Article Details Page -->
+<main
+  class="relative min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800"
+>
+  <!-- Subtle Background Pattern -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.2),rgba(255,255,255,0))] pointer-events-none"
+  ></div>
+
+  <!-- Header Section -->
+  <section class="relative pt-20 pb-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Back Navigation -->
+      <div class="mb-8">
+        <a
+          href="{% url 'articles' %}"
+          class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+        >
+          <i class="ri-arrow-left-line"></i>
+          <span>Back to Articles</span>
+        </a>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div class="space-y-6">
+          <!-- Badge -->
+          <div class="flex items-center gap-3">
+            <span
+              class="px-4 py-2 bg-emerald-600/20 border border-emerald-500/30 rounded-full text-emerald-300 text-sm font-medium"
+            >
+              <i class="ri-article-line mr-2"></i>
+              Article
+            </span>
+            {% if article.published_at %}
+            <span class="text-gray-400 text-sm"
+              >{{ article.published_at|date:"F j, Y" }}</span
+            >
+            {% endif %}
+          </div>
+
+          <!-- Title -->
+          <h1 class="text-4xl lg:text-5xl font-bold text-white leading-tight">
+            {{ article.title }}
+          </h1>
+
+          <!-- Excerpt -->
+          {% if article.excerpt %}
+          <p class="text-xl text-gray-300 leading-relaxed">
+            {{ article.excerpt }}
+          </p>
+          {% endif %}
+
+          <!-- Author Info -->
+          {% if article.author %}
+          <div class="flex flex-wrap gap-4 pt-4">
+            <div class="flex items-center gap-2 text-gray-300">
+              <i class="ri-user-line text-emerald-400"></i>
+              <span>{{ article.author.username }}</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-300">
+              <i class="ri-article-line text-purple-400"></i>
+              <span>Author</span>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Image -->
+        <div class="lg:order-last">
+          {% if article.image %}
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="{{ article.image.url }}"
+              alt="{{ article.title }}"
+              class="w-full h-80 lg:h-96 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"
+            ></div>
+          </div>
+          {% else %}
+          <div
+            class="relative h-80 lg:h-96 bg-gradient-to-br from-emerald-600/20 to-blue-600/20 rounded-2xl flex items-center justify-center border border-emerald-500/20"
+          >
+            <div class="text-center">
+              <i class="ri-article-line text-6xl text-emerald-400/60 mb-4"></i>
+              <p class="text-xl font-semibold text-emerald-300">Article</p>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Sections -->
+  <div class="max-w-6xl mx-auto px-4 space-y-16 pb-20">
+    <!-- Article Content Section -->
+    <section class="space-y-6">
+      <div class="flex items-center gap-3">
+        <div
+          class="w-10 h-10 bg-emerald-600/20 border border-emerald-500/30 rounded-xl flex items-center justify-center"
+        >
+          <i class="ri-article-line text-emerald-400"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-white">Article Content</h2>
+          <p class="text-gray-400 text-sm">Read the full article</p>
+        </div>
+      </div>
+
+      <div
+        class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8"
+      >
+        <div class="prose prose-lg prose-invert max-w-none">
+          <div class="text-gray-300 leading-relaxed space-y-4">
+            {{ article.content|linebreaks }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Author Section -->
+    {% if article.author %}
+    <section class="space-y-6">
+      <div class="flex items-center gap-3">
+        <div
+          class="w-10 h-10 bg-blue-600/20 border border-blue-500/30 rounded-xl flex items-center justify-center"
+        >
+          <i class="ri-user-line text-blue-400"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-white">About the Author</h2>
+          <p class="text-gray-400 text-sm">Meet the writer</p>
+        </div>
+      </div>
+
+      <div
+        class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8"
+      >
+        <div class="flex items-start gap-6">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold"
+          >
+            {{ article.author.username|first|upper }}
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold text-white mb-2">
+              {{ article.author.username }}
+            </h3>
+            <p class="text-gray-400">AI Solutions Team Member</p>
+            <p class="text-gray-300 mt-3 leading-relaxed">
+              Expert in AI technology and solutions, sharing insights and
+              knowledge to help businesses leverage artificial intelligence for
+              growth and innovation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Related Articles Section -->
+    <section class="space-y-6">
+      <div class="flex items-center gap-3">
+        <div
+          class="w-10 h-10 bg-purple-600/20 border border-purple-500/30 rounded-xl flex items-center justify-center"
+        >
+          <i class="ri-article-line text-purple-400"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-white">More Articles</h2>
+          <p class="text-gray-400 text-sm">Explore related content</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div
+          class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-emerald-500/30 transition-colors duration-300"
+        >
+          <div class="flex items-start gap-4">
+            <div
+              class="w-8 h-8 bg-emerald-600/20 rounded-lg flex items-center justify-center flex-shrink-0"
+            >
+              <i class="ri-article-line text-emerald-400 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-2">
+                AI Technology Trends
+              </h3>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Discover the latest trends and developments in artificial
+                intelligence technology.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-emerald-500/30 transition-colors duration-300"
+        >
+          <div class="flex items-start gap-4">
+            <div
+              class="w-8 h-8 bg-emerald-600/20 rounded-lg flex items-center justify-center flex-shrink-0"
+            >
+              <i class="ri-article-line text-emerald-400 text-sm"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white mb-2">Business Solutions</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                Learn how AI can transform your business operations and drive
+                growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center space-y-8 pt-8">
+      <div class="space-y-4">
+        <h2 class="text-3xl font-bold text-white">
+          Stay Updated with Our Latest Articles
+        </h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Get the latest insights, trends, and developments in AI technology
+          delivered to your inbox.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="{% url 'articles' %}"
+          class="px-8 py-3 bg-gradient-to-r from-emerald-600 to-blue-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+        >
+          View All Articles
+        </a>
+        <a
+          href="{% url 'contact' %}"
+          class="px-8 py-3 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-gray-500 hover:text-white transition-colors duration-300"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- Back to Top Button -->
+<button
+  id="back-to-top"
+  class="fixed bottom-6 right-6 w-12 h-12 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 pointer-events-none z-50"
+  onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+>
+  <i class="ri-arrow-up-line"></i>
+</button>
+
+{% endblock %}

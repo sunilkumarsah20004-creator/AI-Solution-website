@@ -1,0 +1,12 @@
+Hi {{ name }},
+
+Thank you for contacting AI-Solutions. We’ve received your message and our team will review it shortly.
+
+One of our experts will get back to you within 24–48 hours. If your inquiry is urgent, you can also reach us directly at support@ai-solutions.com.
+
+We’re excited to explore how AI can help you achieve your goals!
+
+Best regards,
+The AI-Solutions Team
+Email: support@ai-solutions.com
+Contact Number: +977-9800000000

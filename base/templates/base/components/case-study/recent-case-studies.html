@@ -1,0 +1,85 @@
+<section
+  id="cases"
+  class="bg-[#0E1A2B] min-h-[100vh] flex items-center justify-center"
+>
+  <div class="w-full">
+    <!-- Section Heading -->
+    <div class="mx-auto mb-16 max-w-4xl text-center">
+      <span
+        class="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold shadow-sm dark:border-gray-700 dark:bg-gray-900 bg-orange-500"
+      >
+        <i class="ri-trophy-line text-indigo-600 dark:text-indigo-400"></i>
+        Case Studies
+      </span>
+      <h2
+        class="mt-6 text-4xl font-extrabold tracking-tight md:text-5xl text-white"
+      >
+        Highlights from recent solutions
+      </h2>
+      <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        Explore measurable results from our design, engineering, and AI
+        solutions.
+      </p>
+    </div>
+
+    <!-- Card Grid -->
+    <div
+      class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {% for case_study in case_studies %}
+      <article
+        class="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+      >
+        <!-- Image -->
+        <div class="relative w-full h-[200px] overflow-hidden rounded-t-2xl">
+          {% if case_study.image %}
+          <img
+            src="{{ case_study.image.url }}"
+            alt="{{ case_study.title }}"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+          />
+          {% else %}
+          <div
+            class="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800"
+          >
+            <i
+              class="ri-trophy-line text-4xl text-indigo-500 dark:text-indigo-300"
+            ></i>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Card Body -->
+        <div class="p-6">
+          <h3
+            class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+          >
+            {{ case_study.title }}
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+            {{ case_study.summary }}
+          </p>
+          <div
+            class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4"
+          >
+            <span class="flex items-center gap-1">
+              <i class="ri-building-line"></i> {{ case_study.client_company }}
+            </span>
+            <span class="flex items-center gap-1">
+              <i class="ri-user-line"></i> {{ case_study.client_name }}
+            </span>
+          </div>
+          <a
+            href="{% url 'case_studies_details' slug=case_study.slug %}"
+            class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 transition"
+          >
+            Read case study
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

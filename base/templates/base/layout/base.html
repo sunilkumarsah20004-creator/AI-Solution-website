@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% block title %} AI‑Solutions — Digital Employee Experience{% endblock %}
+    </title>
+    <!-- Tailwind CSS via CDN (Play CDN suitable for prototyping) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- remix icons  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- css  -->
+    <link rel="stylesheet" href="{% static 'base/css/style.css' %}" />
+  </head>
+
+  <body>
+    <!-- Toast Notifications Container - Top Center -->
+    {% if toasts %}
+    <div
+      id="toast-container"
+      class="fixed top-20 left-1/2 transform -translate-x-1/2 z-[60] space-y-3 pointer-events-none"
+    >
+      {% for t in toasts %}
+
+      <!-- include toasts -->
+      {% include "base/components/toast.html" with text=t.text color=t.color %}
+      <!-- message end  -->
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- NAV -->
+    {% include 'base/components/navbar.html' %}
+
+    <!-- content -->
+    {% block content %} {% endblock %}
+
+    <!-- footer -->
+    {% include 'base/components/footer.html' %}
+
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 p-3 bg-gray-800 hover:bg-gray-700 text-white rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-40"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    >
+      <i class="ri-arrow-up-line text-xl"></i>
+    </button>
+
+    <!-- JS -->
+    <script src="{% static 'base/js/app.js' %}"></script>
+  </body>
+</html>

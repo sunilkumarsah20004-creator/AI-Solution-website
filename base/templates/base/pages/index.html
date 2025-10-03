@@ -1,0 +1,29 @@
+{% extends 'base/layout/base.html' %}
+
+<!-- title -->
+{% block title %} AI Solutions - Transform Your Business with Intelligent
+Automation {% endblock %}
+
+<!-- content -->
+{% block content %}
+<!-- Main Container with Clean Background -->
+<main>
+  <!-- Hero Section -->
+  <div class="relative">{% include 'base/components/hero-section.html' %}</div>
+
+  <!-- Features Section -->
+
+  {% include 'base/components/features-solution.html' %}
+
+  <!-- Case Studies Section -->
+
+  {% include 'base/components/case-study/recent-case-studies.html' %}
+
+  <!-- testimonials section -->
+  {% include 'base/components/testimonials.html' %}
+
+  <!-- cta section  -->
+  {% include 'base/components/cta.html' %}
+</main>
+
+{% endblock %}

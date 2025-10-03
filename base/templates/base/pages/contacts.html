@@ -1,0 +1,406 @@
+{% extends 'base/layout/base.html' %}
+
+<!-- title -->
+{% block title %} Contact Us {% endblock %}
+
+<!-- content  -->
+{% block content %}
+<!-- ENHANCED CONTACT SECTION -->
+<section
+  id="contact"
+  class="py-20 md:py-28 relative overflow-hidden min-h-[80vh]"
+>
+  <!-- Background Elements -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-teal-50/20 to-emerald-50/30 dark:from-cyan-950/10 dark:via-teal-950/10 dark:to-emerald-950/10"
+  ></div>
+  <div
+    class="absolute top-0 left-1/3 w-96 h-96 bg-gradient-to-br from-cyan-200/20 to-teal-200/20 dark:from-cyan-800/10 dark:to-teal-800/10 rounded-full blur-3xl"
+  ></div>
+  <div
+    class="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-tr from-teal-200/20 to-emerald-200/20 dark:from-teal-800/10 dark:to-emerald-800/10 rounded-full blur-3xl"
+  ></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-4">
+    <!-- Enhanced Header -->
+    <div class="text-center mb-16">
+      <div class="mb-8">
+        <span
+          class="inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/80 backdrop-blur-sm px-6 py-3 text-sm font-semibold shadow-lg dark:border-white/10 dark:bg-gray-900/80"
+        >
+          <div
+            class="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-cyan-500 to-teal-600 rounded-full"
+          >
+            <i class="ri-mail-line text-white"></i>
+          </div>
+          <span class="text-gray-900 dark:text-white">Contact Us</span>
+        </span>
+      </div>
+      <h2
+        class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-gray-900 via-cyan-800 to-teal-800 dark:from-white dark:via-cyan-200 dark:to-teal-200 bg-clip-text text-transparent"
+      >
+        Get in Touch
+      </h2>
+      <p
+        class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+      >
+        Ready to transform your business with AI? Let's discuss your project and
+        explore how our solutions can drive your success.
+      </p>
+    </div>
+    <!-- Enhanced Contact Layout -->
+    <div class="grid lg:grid-cols-3 gap-12">
+      <!-- Enhanced Contact Form -->
+      <div class="lg:col-span-2">
+        <div
+          class="group relative overflow-hidden rounded-3xl border border-white/20 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:shadow-3xl"
+        >
+          <!-- Form Header -->
+          <div class="p-8 pb-0">
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-cyan-500 to-teal-600 rounded-2xl shadow-lg"
+              >
+                <i class="ri-edit-line text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                  Start Your Project
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Fill out the form below and we'll get back to you
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enhanced Form -->
+          <div class="p-8">
+            <form id="contactForm" class="space-y-6" method="post">
+              {% csrf_token %}
+
+              <!-- Personal Information Section -->
+              <div class="space-y-4">
+                <h4
+                  class="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2"
+                >
+                  <i class="ri-user-line text-cyan-600"></i>
+                  Personal Information
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="relative group">
+                    <label
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
+                      <i class="ri-user-line text-cyan-600 mr-1"></i>
+                      Full Name *
+                    </label>
+                    <input
+                      name="name"
+                      required
+                      placeholder="Enter your full name"
+                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm hover:shadow-md"
+                    />
+                  </div>
+                  <div class="relative group">
+                    <label
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
+                      <i class="ri-mail-line text-cyan-600 mr-1"></i>
+                      Email Address *
+                    </label>
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="your@email.com"
+                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm hover:shadow-md"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Business Information Section -->
+              <div class="space-y-4">
+                <h4
+                  class="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2"
+                >
+                  <i class="ri-building-line text-cyan-600"></i>
+                  Business Information
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="relative group">
+                    <label
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
+                      <i class="ri-phone-line text-cyan-600 mr-1"></i>
+                      Phone Number
+                    </label>
+                    <input
+                      name="phone"
+                      placeholder="+1 (555) 123-4567"
+                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm hover:shadow-md"
+                    />
+                  </div>
+                  <div class="relative group">
+                    <label
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
+                      <i class="ri-building-2-line text-cyan-600 mr-1"></i>
+                      Company Name
+                    </label>
+                    <input
+                      name="company_name"
+                      placeholder="Your company name"
+                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm hover:shadow-md"
+                    />
+                  </div>
+                  <div class="relative group">
+                    <label
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
+                      <i class="ri-global-line text-cyan-600 mr-1"></i>
+                      Country
+                    </label>
+                    <input
+                      name="country"
+                      placeholder="Your country"
+                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm hover:shadow-md"
+                    />
+                  </div>
+                  <div class="relative group">
+                    <label
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
+                      <i class="ri-briefcase-line text-cyan-600 mr-1"></i>
+                      Job Title
+                    </label>
+                    <input
+                      name="job_title"
+                      placeholder="Your role/position"
+                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm hover:shadow-md"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Details Section -->
+              <div class="space-y-4">
+                <h4
+                  class="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2"
+                >
+                  <i class="ri-file-text-line text-cyan-600"></i>
+                  Project Details
+                </h4>
+                <div class="relative group">
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
+                    Tell us about your project requirements, goals, and timeline
+                  </label>
+                  <textarea
+                    name="job_details"
+                    rows="5"
+                    placeholder="Describe your project needs, challenges you're facing, expected outcomes, and any specific requirements..."
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all resize-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm hover:shadow-md"
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Enhanced Submit Button -->
+              <div class="pt-4">
+                <button
+                  type="submit"
+                  class="group relative w-full px-8 py-4 bg-gradient-to-r from-cyan-600 to-teal-600 text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25 hover:-translate-y-1 flex items-center justify-center gap-3"
+                >
+                  <span class="relative z-10">Send Message</span>
+                  <i
+                    class="ri-send-plane-line group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  ></i>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-r from-cyan-700 to-teal-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </button>
+                <p
+                  class="text-center text-sm text-gray-500 dark:text-gray-400 mt-3"
+                >
+                  We'll respond within 24 hours
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Enhanced Contact Info Sidebar -->
+      <div class="space-y-6">
+        <!-- Why Choose Us Card -->
+        <div
+          class="group relative overflow-hidden rounded-3xl border border-white/20 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-xl transition-all duration-500 hover:shadow-2xl"
+        >
+          <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-cyan-500 to-teal-600 rounded-2xl shadow-lg"
+              >
+                <i class="ri-star-line text-white text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                Why Choose AI Solutions?
+              </h3>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="flex items-start gap-4 p-3 bg-cyan-50 dark:bg-cyan-950/20 rounded-xl transition-all duration-300 hover:bg-cyan-100 dark:hover:bg-cyan-950/30"
+              >
+                <div
+                  class="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-full flex-shrink-0"
+                >
+                  <i class="ri-robot-line text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-gray-900 dark:text-white text-sm"
+                  >
+                    AI-powered automation
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300 text-xs">
+                    Streamline workflows with intelligent solutions
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-start gap-4 p-3 bg-teal-50 dark:bg-teal-950/20 rounded-xl transition-all duration-300 hover:bg-teal-100 dark:hover:bg-teal-950/30"
+              >
+                <div
+                  class="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full flex-shrink-0"
+                >
+                  <i class="ri-flashlight-line text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-gray-900 dark:text-white text-sm"
+                  >
+                    Rapid prototyping
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300 text-xs">
+                    Fast development and iteration cycles
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-start gap-4 p-3 bg-emerald-50 dark:bg-emerald-950/20 rounded-xl transition-all duration-300 hover:bg-emerald-100 dark:hover:bg-emerald-950/30"
+              >
+                <div
+                  class="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex-shrink-0"
+                >
+                  <i class="ri-customer-service-line text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-gray-900 dark:text-white text-sm"
+                  >
+                    24/7 AI support
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300 text-xs">
+                    Round-the-clock intelligent assistance
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-start gap-4 p-3 bg-purple-50 dark:bg-purple-950/20 rounded-xl transition-all duration-300 hover:bg-purple-100 dark:hover:bg-purple-950/30"
+              >
+                <div
+                  class="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex-shrink-0"
+                >
+                  <i class="ri-settings-line text-white text-sm"></i>
+                </div>
+                <div>
+                  <h4
+                    class="font-semibold text-gray-900 dark:text-white text-sm"
+                  >
+                    Custom AI assistants
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300 text-xs">
+                    Tailored solutions for your business
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Methods Card -->
+        <div
+          class="group relative overflow-hidden rounded-3xl border border-white/20 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-xl transition-all duration-500 hover:shadow-2xl"
+        >
+          <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-700 rounded-2xl shadow-lg"
+              >
+                <i class="ri-contacts-line text-white text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                Other Ways to Reach Us
+              </h3>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                <div
+                  class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
+                >
+                  <i class="ri-mail-line text-white text-sm"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-white text-sm">
+                    Email
+                  </p>
+                  <p class="text-gray-600 dark:text-gray-300 text-xs">
+                    hello@aisolutions.com
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                <div
+                  class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-green-500 to-green-600 rounded-full"
+                >
+                  <i class="ri-phone-line text-white text-sm"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-white text-sm">
+                    Phone
+                  </p>
+                  <p class="text-gray-600 dark:text-gray-300 text-xs">
+                    +1 (555) 123-4567
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                <div
+                  class="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full"
+                >
+                  <i class="ri-calendar-line text-white text-sm"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-white text-sm">
+                    Schedule a Call
+                  </p>
+                  <p class="text-gray-600 dark:text-gray-300 text-xs">
+                    Book a free consultation
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

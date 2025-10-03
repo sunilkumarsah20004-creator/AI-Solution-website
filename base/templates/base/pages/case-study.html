@@ -1,0 +1,304 @@
+{% extends 'base/layout/base.html' %} {% load static %}
+
+<!-- title -->
+{% block title %}Case Studies - AI Solutions{% endblock %}
+
+<!-- content -->
+{% block content %}
+
+<!-- Hero Section -->
+<section
+  class="relative min-h-screen flex items-center justify-center overflow-hidden"
+>
+  <!-- Background Elements -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800"
+  ></div>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.2),rgba(255,255,255,0))] pointer-events-none"
+  ></div>
+
+  <!-- Floating Elements -->
+  <div
+    class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl"
+  ></div>
+  <div
+    class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"
+  ></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
+    <!-- Badge -->
+    <div class="mb-8">
+      <span
+        class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600/20 border border-emerald-500/30 rounded-full text-emerald-300 text-sm font-medium backdrop-blur-sm"
+      >
+        <i class="ri-file-list-3-line text-lg"></i>
+        Success Stories
+      </span>
+    </div>
+
+    <!-- Main Heading -->
+    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+      Real Results &
+      <span
+        class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent"
+      >
+        Proven Impact
+      </span>
+    </h1>
+
+    <!-- Subheading -->
+    <p
+      class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+    >
+      Discover how our AI solutions have transformed businesses across
+      industries with measurable results and real-world impact
+    </p>
+
+    <!-- Stats -->
+    <div class="flex flex-wrap justify-center gap-8 mb-12">
+      <div class="text-center">
+        <div class="text-3xl font-bold text-emerald-400">
+          {{ case_studies|length }}
+        </div>
+        <div class="text-sm text-gray-400">Case Studies</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-teal-400">4.7×</div>
+        <div class="text-sm text-gray-400">Average ROI</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-cyan-400">72</div>
+        <div class="text-sm text-gray-400">NPS Score</div>
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="#case-studies"
+        class="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+      >
+        Explore Case Studies
+        <i class="ri-arrow-down-line ml-2"></i>
+      </a>
+      <a
+        href="{% url 'contact' %}"
+        class="px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-gray-500 hover:text-white transition-colors duration-300"
+      >
+        Start Your Project
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+  >
+    <i class="ri-arrow-down-line text-2xl text-gray-400"></i>
+  </div>
+</section>
+
+<!-- Case Studies Section -->
+<section id="case-studies" class="py-20 md:py-28 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-teal-50/20 to-cyan-50/30 dark:from-emerald-950/10 dark:via-teal-950/10 dark:to-cyan-950/10"
+  ></div>
+  <div
+    class="absolute top-0 left-1/4 w-72 h-72 bg-gradient-to-br from-emerald-200/20 to-teal-200/20 dark:from-emerald-800/10 dark:to-teal-800/10 rounded-full blur-3xl"
+  ></div>
+
+  <div class="relative z-10 mx-auto max-w-4xl text-center mb-16">
+    <span
+      class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 backdrop-blur-sm px-4 py-2 text-sm font-semibold shadow-lg dark:border-white/10 dark:bg-gray-900/80"
+    >
+      <i class="ri-file-list-3-line text-emerald-600 dark:text-emerald-400"></i>
+      Success Stories
+    </span>
+    <h2
+      class="mt-6 text-4xl font-extrabold tracking-tight md:text-5xl bg-gradient-to-r from-gray-900 via-emerald-800 to-teal-800 dark:from-white dark:via-emerald-200 dark:to-teal-200 bg-clip-text text-transparent"
+    >
+      Real Results & Impact
+    </h2>
+    <p
+      class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
+    >
+      Explore how our AI solutions have delivered measurable results across
+      different industries and use cases
+    </p>
+  </div>
+
+  <!-- Case Studies Grid -->
+  <div class="relative z-10 mx-auto max-w-7xl px-4">
+    <div class="grid gap-8 md:gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {% for cs in case_studies %}
+      <div class="group relative">
+        <div
+          class="overflow-hidden rounded-3xl border border-white/20 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-emerald-200/50 dark:hover:border-emerald-400/30"
+        >
+          <!-- Case Study Image -->
+          <div
+            class="relative h-56 bg-gradient-to-br from-emerald-100 via-teal-50 to-cyan-100 dark:from-emerald-900/30 dark:via-teal-900/20 dark:to-cyan-900/30"
+          >
+            {% if cs.image %}
+            <img
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="{{ cs.image.url }}"
+              alt="{{ cs.title }}"
+              loading="lazy"
+            />
+            {% else %}
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <i
+                  class="ri-file-list-3-fill text-5xl text-emerald-600 dark:text-emerald-400 mb-3"
+                ></i>
+                <div
+                  class="text-sm font-medium text-emerald-700 dark:text-emerald-300"
+                >
+                  Case Study
+                </div>
+              </div>
+            </div>
+            {% endif %}
+
+            <!-- Solution Tags -->
+            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+              {% for sol in cs.solutions.all|slice:":2" %}
+              <span
+                class="px-2 py-1 text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 rounded-full"
+              >
+                {{ sol.title }}
+              </span>
+              {% endfor %} {% if cs.solutions.all|length > 2 %}
+              <span
+                class="px-2 py-1 text-xs font-semibold bg-white/90 text-gray-600 dark:bg-gray-800/90 dark:text-gray-300 rounded-full"
+              >
+                +{{ cs.solutions.all|length|add:"-2" }} more
+              </span>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Case Study Content -->
+          <div class="p-6">
+            <div class="mb-4">
+              <h3
+                class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2"
+              >
+                {{ cs.title }}
+              </h3>
+            </div>
+
+            {% if cs.summary %}
+            <p
+              class="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3 leading-relaxed"
+            >
+              {{ cs.summary|truncatewords:20 }}
+            </p>
+            {% endif %}
+
+            <!-- Client Info -->
+            {% if cs.client_name or cs.client_company %}
+            <div class="space-y-2 mb-6">
+              {% if cs.client_name %}
+              <div
+                class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+              >
+                <i
+                  class="ri-user-line text-emerald-600 dark:text-emerald-400"
+                ></i>
+                <span>{{ cs.client_name }}</span>
+              </div>
+              {% endif %} {% if cs.client_company %}
+              <div
+                class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+              >
+                <i
+                  class="ri-building-line text-emerald-600 dark:text-emerald-400"
+                ></i>
+                <span>{{ cs.client_company }}</span>
+              </div>
+              {% endif %}
+            </div>
+            {% endif %}
+
+            <!-- Action Button -->
+            <div class="flex items-center justify-between">
+              <a
+                href="{% url 'case_studies_details' cs.slug %}"
+                class="group/btn inline-flex items-center gap-2 w-full justify-center px-4 py-3 text-sm font-semibold text-emerald-600 hover:text-white dark:text-emerald-400 dark:hover:text-white bg-emerald-50 hover:bg-emerald-600 dark:bg-emerald-900/20 dark:hover:bg-emerald-600 rounded-xl transition-all duration-300 border border-emerald-200 hover:border-emerald-600 dark:border-emerald-800 dark:hover:border-emerald-600"
+              >
+                Read Case Study
+                <svg
+                  class="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <div
+                class="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500"
+              >
+                <i class="ri-trophy-line"></i>
+                <span>Success</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hover Effect Gradient -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-emerald-50/10 to-teal-50/10 dark:from-emerald-950/10 dark:to-teal-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+          ></div>
+        </div>
+      </div>
+      {% empty %}
+      <!-- Empty State -->
+      <div class="relative z-10 text-center py-16 col-span-full">
+        <div class="mx-auto max-w-md">
+          <i
+            class="ri-file-list-3-line text-6xl text-gray-400 dark:text-gray-600 mb-4"
+          ></i>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            No case studies yet
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            We're working on exciting case studies. Check back soon for success
+            stories!
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  {% if case_studies %}
+  <div class="relative z-10 mt-16 text-center">
+    <div
+      class="inline-flex items-center gap-4 px-6 py-3 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl border border-emerald-200/50 dark:border-emerald-700/50"
+    >
+      <i class="ri-rocket-line text-emerald-600 dark:text-emerald-400"></i>
+      <span class="text-sm text-gray-700 dark:text-gray-300">
+        Ready to create your success story?
+        <a
+          href="{% url 'contact' %}"
+          class="font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-colors"
+        >
+          Start your project
+        </a>
+      </span>
+    </div>
+  </div>
+  {% endif %}
+</section>
+
+{% endblock %}

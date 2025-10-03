@@ -1,0 +1,176 @@
+<header id="navbar" class="fixed top-0 z-50 w-full transition-all duration-300">
+  <!-- Navbar Background -->
+  <div
+    id="navbar-bg"
+    class="absolute inset-0 border-b border-transparent transition-all duration-300"
+  ></div>
+
+  <!-- Main Navbar Content -->
+  <div class="relative z-10 mx-auto max-w-7xl px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="{% url 'home' %}" class="flex items-center gap-3 group">
+        <div
+          class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white font-bold shadow-md group-hover:bg-blue-700 transition-colors duration-200"
+        >
+          AI
+        </div>
+        <div class="text-left">
+          <p
+            class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors duration-200"
+          >
+            AI Solutions
+          </p>
+          <p class="text-xs text-gray-300">Digital Experience</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-1">
+        <a
+          href="{% url 'home' %}"
+          class="px-4 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+        >
+          Home
+        </a>
+        <a
+          href="{% url 'case-study' %}"
+          class="px-4 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+        >
+          Case Studies
+        </a>
+
+        <a
+          href="{% url 'articles' %}"
+          class="px-4 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+        >
+          Articles
+        </a>
+        <a
+          href="{% url 'events' %}"
+          class="px-4 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+        >
+          Events
+        </a>
+        <a
+          href="{% url 'contact' %}"
+          class="px-4 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+        >
+          Contact Us
+        </a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:flex">
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg text-sm font-semibold shadow-md hover:shadow-lg transition-colors duration-200"
+        >
+          Get Demo
+          <svg
+            class="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="navBtn"
+        class="md:hidden p-2 rounded-lg hover:bg-white/10 text-white transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg
+          id="navIconOpen"
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+        <svg
+          id="navIconClose"
+          class="hidden h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div
+    id="mobileNav"
+    class="hidden md:hidden bg-black/90 backdrop-blur-md border-t border-blue-400/20"
+  >
+    <nav class="px-4 py-4 space-y-2">
+      <a
+        href="{% url 'home' %}"
+        class="block px-3 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+      >
+        Home
+      </a>
+      <a
+        href="{% url 'case-study' %}"
+        class="block px-3 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+      >
+        Case Studies
+      </a>
+      <a
+        href="#testimonials"
+        class="block px-3 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+      >
+        Testimonials
+      </a>
+      <a
+        href="{% url 'articles' %}"
+        class="block px-3 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+      >
+        Articles
+      </a>
+      <a
+        href="{% url 'events' %}"
+        class="block px-3 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+      >
+        Events
+      </a>
+      <a
+        href="{% url 'contact' %}"
+        class="block px-3 py-2 text-sm font-medium text-white hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-colors duration-200"
+      >
+        Contact
+      </a>
+      <div class="pt-2">
+        <a
+          href="#contact"
+          class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors duration-200"
+        >
+          Get Demo
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
