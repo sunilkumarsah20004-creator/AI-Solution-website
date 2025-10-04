@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import home, contact, case_study_list, case_studies_details, articles_page, articles_details, all_events_page, events_details
+from .views import home, contact, case_study_list, case_studies_details, articles_page, articles_details, all_events_page, events_details, services, ai_assistant
 urlpatterns = [
     path('', home, name="home"),
+    path('services/', services, name="services"),
+    path('ai-assistant/', ai_assistant, name="ai-assistant"),
     path('contact/', contact, name='contact'),
     path("case-study/", case_study_list, name="case-study"),
     path('case-studies/<slug:slug>/', case_studies_details,

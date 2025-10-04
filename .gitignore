@@ -9,6 +9,7 @@ __pycache__/
 
 # Django artifacts
 .env
+.env_production
 db.sqlite3
 media/
 

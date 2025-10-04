@@ -138,8 +138,21 @@
         >
           <!-- Event Image/Icon -->
           <div
-            class="relative h-56 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100 dark:from-blue-900/30 dark:via-purple-900/20 dark:to-pink-900/30"
+            class="relative h-56 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100 dark:from-blue-900/30 dark:via-purple-900/20 dark:to-pink-900/30 overflow-hidden"
           >
+            {% if event.gallery_images.exists %}
+            <!-- Show first gallery image -->
+            {% with event.gallery_images.first as first_image %}
+            <img
+              src="{{ first_image.image.url }}"
+              alt="{% if first_image.caption %}{{ first_image.caption }}{% else %}{{ event.title }}{% endif %}"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+            ></div>
+            {% endwith %} {% else %}
+            <!-- Fallback to icon if no gallery images -->
             <div class="absolute inset-0 flex items-center justify-center">
               <div class="text-center">
                 <i
@@ -157,6 +170,7 @@
                 </div>
               </div>
             </div>
+            {% endif %}
 
             <!-- Event Status Badge -->
             <div class="absolute top-4 right-4">

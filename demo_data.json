@@ -187,7 +187,7 @@
       "status": "published",
       "image": null,
       "published_at": "2025-08-01T10:00:00Z",
-      "author": 1,
+      "author": null,
       "created_at": "2025-08-01T10:00:00Z",
       "updated_at": "2025-08-01T10:00:00Z"
     }
@@ -203,7 +203,7 @@
       "status": "published",
       "image": null,
       "published_at": "2025-08-02T10:00:00Z",
-      "author": 1,
+      "author": null,
       "created_at": "2025-08-02T10:00:00Z",
       "updated_at": "2025-08-02T10:00:00Z"
     }
@@ -219,7 +219,7 @@
       "status": "published",
       "image": null,
       "published_at": "2025-08-03T10:00:00Z",
-      "author": 1,
+      "author": null,
       "created_at": "2025-08-03T10:00:00Z",
       "updated_at": "2025-08-03T10:00:00Z"
     }
@@ -235,7 +235,7 @@
       "status": "published",
       "image": null,
       "published_at": "2025-08-10T09:00:00Z",
-      "author": 1,
+      "author": null,
       "created_at": "2025-08-10T09:00:00Z",
       "updated_at": "2025-08-10T09:00:00Z"
     }
@@ -251,7 +251,7 @@
       "status": "published",
       "image": null,
       "published_at": "2025-08-15T11:00:00Z",
-      "author": 1,
+      "author": null,
       "created_at": "2025-08-15T11:00:00Z",
       "updated_at": "2025-08-15T11:00:00Z"
     }
@@ -267,7 +267,7 @@
       "status": "published",
       "image": null,
       "published_at": "2025-08-20T14:30:00Z",
-      "author": 1,
+      "author": null,
       "created_at": "2025-08-20T14:30:00Z",
       "updated_at": "2025-08-20T14:30:00Z"
     }
@@ -283,7 +283,7 @@
       "status": "published",
       "image": null,
       "published_at": "2025-08-25T16:45:00Z",
-      "author": 1,
+      "author": null,
       "created_at": "2025-08-25T16:45:00Z",
       "updated_at": "2025-08-25T16:45:00Z"
     }
@@ -299,7 +299,7 @@
       "status": "published",
       "image": null,
       "published_at": "2025-08-30T10:15:00Z",
-      "author": 1,
+      "author": null,
       "created_at": "2025-08-30T10:15:00Z",
       "updated_at": "2025-08-30T10:15:00Z"
     }
@@ -348,7 +348,7 @@
       "ends_at": "2025-12-05T16:00:00Z",
       "location": "Online Webinar",
       "is_public": true,
-      "created_by": 1,
+      "created_by": null,
       "created_at": "2025-09-03T10:00:00Z",
       "updated_at": "2025-09-03T10:00:00Z"
     }
@@ -400,6 +400,151 @@
       "created_by": null,
       "created_at": "2025-09-06T10:00:00Z",
       "updated_at": "2025-09-06T10:00:00Z"
+    }
+  },
+
+  {
+    "model": "base.service",
+    "pk": 1,
+    "fields": {
+      "title": "AI Strategy & Consulting",
+      "slug": "ai-strategy-consulting",
+      "description": "Develop comprehensive AI strategies tailored to your business needs. Our experts help you identify opportunities and create roadmaps for AI implementation. We provide end-to-end consulting services from initial assessment to full-scale deployment.",
+      "short_description": "Comprehensive AI strategies and implementation roadmaps tailored to your business needs.",
+      "category": "ai_consulting",
+      "status": "active",
+      "icon": "ri-lightbulb-line",
+      "image": null,
+      "features": [
+        "AI Readiness Assessment",
+        "Technology Roadmap Development",
+        "ROI Analysis & Business Case",
+        "Implementation Planning",
+        "Change Management Support"
+      ],
+      "created_by": null,
+      "created_at": "2025-09-01T10:00:00Z",
+      "updated_at": "2025-09-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.service",
+    "pk": 2,
+    "fields": {
+      "title": "Machine Learning Development",
+      "slug": "machine-learning-development",
+      "description": "Build custom ML models and algorithms that solve your specific business challenges. From data preprocessing to model deployment, we handle every aspect of machine learning development. Our team specializes in creating scalable, production-ready ML solutions.",
+      "short_description": "Custom ML models and algorithms designed to solve your specific business challenges.",
+      "category": "ml_development",
+      "status": "active",
+      "icon": "ri-brain-line",
+      "image": null,
+      "features": [
+        "Custom Model Development",
+        "Data Pipeline Engineering",
+        "Model Training & Optimization",
+        "Performance Monitoring",
+        "Scalable Deployment"
+      ],
+      "created_by": null,
+      "created_at": "2025-09-01T10:00:00Z",
+      "updated_at": "2025-09-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.service",
+    "pk": 3,
+    "fields": {
+      "title": "Natural Language Processing",
+      "slug": "natural-language-processing",
+      "description": "Harness the power of language understanding with our advanced NLP solutions for text analysis, sentiment detection, and automated content processing. We build intelligent systems that can understand, interpret, and generate human language.",
+      "short_description": "Advanced NLP solutions for text analysis, sentiment detection, and automated content processing.",
+      "category": "nlp",
+      "status": "active",
+      "icon": "ri-chat-3-line",
+      "image": null,
+      "features": [
+        "Text Analysis & Classification",
+        "Sentiment Analysis",
+        "Language Translation",
+        "Content Generation",
+        "Voice Recognition"
+      ],
+      "created_by": null,
+      "created_at": "2025-09-01T10:00:00Z",
+      "updated_at": "2025-09-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.service",
+    "pk": 4,
+    "fields": {
+      "title": "Computer Vision",
+      "slug": "computer-vision",
+      "description": "Transform visual data into actionable insights with our computer vision solutions for image recognition, object detection, and visual analytics. We create intelligent systems that can see, understand, and interpret visual information.",
+      "short_description": "Computer vision solutions for image recognition, object detection, and visual analytics.",
+      "category": "computer_vision",
+      "status": "active",
+      "icon": "ri-eye-line",
+      "image": null,
+      "features": [
+        "Image Recognition",
+        "Object Detection",
+        "Video Analytics",
+        "Facial Recognition",
+        "Quality Inspection"
+      ],
+      "created_by": null,
+      "created_at": "2025-09-01T10:00:00Z",
+      "updated_at": "2025-09-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.service",
+    "pk": 5,
+    "fields": {
+      "title": "AI Integration & Deployment",
+      "slug": "ai-integration-deployment",
+      "description": "Seamlessly integrate AI solutions into your existing systems with our comprehensive deployment and integration services. We ensure smooth implementation, optimal performance, and ongoing support for your AI initiatives.",
+      "short_description": "Comprehensive AI integration and deployment services for seamless system implementation.",
+      "category": "ai_integration",
+      "status": "active",
+      "icon": "ri-rocket-line",
+      "image": null,
+      "features": [
+        "System Integration",
+        "Cloud Deployment",
+        "Performance Monitoring",
+        "API Development",
+        "Ongoing Support"
+      ],
+      "created_by": null,
+      "created_at": "2025-09-01T10:00:00Z",
+      "updated_at": "2025-09-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "base.service",
+    "pk": 6,
+    "fields": {
+      "title": "Advanced Data Analytics",
+      "slug": "advanced-data-analytics",
+      "description": "Unlock insights from your data with our advanced analytics solutions, including predictive modeling and real-time data processing. We help you make data-driven decisions and discover hidden patterns in your business data.",
+      "short_description": "Advanced analytics solutions including predictive modeling and real-time data processing.",
+      "category": "data_analytics",
+      "status": "active",
+      "icon": "ri-bar-chart-line",
+      "image": null,
+      "features": [
+        "Predictive Analytics",
+        "Real-time Processing",
+        "Business Intelligence",
+        "Data Visualization",
+        "Statistical Modeling"
+      ],
+      "created_by": null,
+      "created_at": "2025-09-01T10:00:00Z",
+      "updated_at": "2025-09-01T10:00:00Z"
     }
   }
 ]

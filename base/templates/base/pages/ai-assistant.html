@@ -1,0 +1,378 @@
+{% extends 'base/layout/base.html' %} {% load static %}
+
+<!-- title -->
+{% block title %}AI Assistant - Chat with Our AI{% endblock %}
+
+<!-- content -->
+{% block content %}
+
+<!-- Chat Interface Section -->
+<section
+  class="relative min-h-screen pt-24 pb-8 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800"
+>
+  <!-- Background Elements -->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.2),rgba(255,255,255,0))] pointer-events-none"
+  ></div>
+
+  <!-- Floating Elements -->
+  <div
+    class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl"
+  ></div>
+  <div
+    class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"
+  ></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-4">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <div class="mb-4">
+        <span
+          class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600/20 border border-emerald-500/30 rounded-full text-emerald-300 text-sm font-medium backdrop-blur-sm"
+        >
+          <i class="ri-robot-line text-lg"></i>
+          AI Assistant
+        </span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        Chat with Our
+        <span
+          class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent"
+        >
+          AI Assistant
+        </span>
+      </h1>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        Ask me anything about our AI solutions, services, case studies, or how
+        we can help your business
+      </p>
+    </div>
+
+    <!-- Chat Container -->
+    <div
+      class="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden"
+    >
+      <!-- Chat Header -->
+      <div
+        class="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4 flex items-center gap-3"
+      >
+        <div
+          class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center"
+        >
+          <i class="ri-robot-2-line text-white text-xl"></i>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold">AI Solutions Assistant</h3>
+          <p class="text-emerald-100 text-sm flex items-center gap-1">
+            <span
+              class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+            ></span>
+            Online
+          </p>
+        </div>
+      </div>
+
+      <!-- Chat Messages -->
+      <div
+        id="chatMessages"
+        class="h-[500px] overflow-y-auto p-6 space-y-4 bg-slate-900/50"
+      >
+        <!-- Welcome Message -->
+        <div class="flex gap-3 animate-fade-in">
+          <div
+            class="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0"
+          >
+            <i class="ri-robot-line text-white text-sm"></i>
+          </div>
+          <div
+            class="bg-white/10 backdrop-blur-sm rounded-2xl rounded-tl-none px-4 py-3 max-w-[80%]"
+          >
+            <p class="text-white text-sm leading-relaxed">
+              Hello! 👋 I'm your AI Solutions assistant. I can help you learn
+              about our:
+            </p>
+            <ul class="text-gray-300 text-sm mt-2 space-y-1">
+              <li>• AI services and solutions</li>
+              <li>• Case studies and success stories</li>
+              <li>• Technology capabilities</li>
+              <li>• Pricing and packages</li>
+            </ul>
+            <p class="text-white text-sm mt-2">How can I assist you today?</p>
+          </div>
+        </div>
+
+        <!-- Suggested Questions -->
+        <div class="flex flex-wrap gap-2 justify-center my-4">
+          <button
+            onclick="sendSuggestedQuestion('What services do you offer?')"
+            class="suggested-question"
+          >
+            What services do you offer?
+          </button>
+          <button
+            onclick="sendSuggestedQuestion('Tell me about your case studies')"
+            class="suggested-question"
+          >
+            Tell me about your case studies
+          </button>
+          <button
+            onclick="sendSuggestedQuestion('How can AI help my business?')"
+            class="suggested-question"
+          >
+            How can AI help my business?
+          </button>
+          <button
+            onclick="sendSuggestedQuestion('What is your pricing?')"
+            class="suggested-question"
+          >
+            What is your pricing?
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Input -->
+      <div
+        class="bg-slate-800/50 backdrop-blur-sm px-6 py-4 border-t border-white/10"
+      >
+        <form id="chatForm" class="flex gap-3">
+          <input
+            type="text"
+            id="userMessage"
+            placeholder="Type your message here..."
+            class="flex-1 bg-white/10 text-white placeholder-gray-400 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 border border-white/10"
+            autocomplete="off"
+          />
+          <button
+            type="submit"
+            class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+          >
+            <span>Send</span>
+            <i class="ri-send-plane-fill"></i>
+          </button>
+        </form>
+        <p class="text-gray-400 text-xs mt-3 text-center">
+          Powered by AI Solutions • Your data is secure and private
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Info Cards -->
+    <div class="grid md:grid-cols-3 gap-4 mt-8">
+      <div
+        class="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+      >
+        <div class="flex items-center gap-3 mb-2">
+          <div
+            class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center"
+          >
+            <i class="ri-customer-service-line text-blue-400 text-xl"></i>
+          </div>
+          <h4 class="text-white font-semibold">24/7 Support</h4>
+        </div>
+        <p class="text-gray-400 text-sm">Always here to help you</p>
+      </div>
+      <div
+        class="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+      >
+        <div class="flex items-center gap-3 mb-2">
+          <div
+            class="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center"
+          >
+            <i class="ri-shield-check-line text-emerald-400 text-xl"></i>
+          </div>
+          <h4 class="text-white font-semibold">Secure & Private</h4>
+        </div>
+        <p class="text-gray-400 text-sm">Your data is protected</p>
+      </div>
+      <div
+        class="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+      >
+        <div class="flex items-center gap-3 mb-2">
+          <div
+            class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center"
+          >
+            <i class="ri-sparkling-line text-purple-400 text-xl"></i>
+          </div>
+          <h4 class="text-white font-semibold">Smart AI</h4>
+        </div>
+        <p class="text-gray-400 text-sm">Powered by advanced AI</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .suggested-question {
+    @apply px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm rounded-full border border-white/20 transition-all duration-300 transform hover:scale-105;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+
+  /* Custom scrollbar for chat */
+  #chatMessages::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #chatMessages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+
+  #chatMessages::-webkit-scrollbar-thumb {
+    background: rgba(16, 185, 129, 0.5);
+    border-radius: 10px;
+  }
+
+  #chatMessages::-webkit-scrollbar-thumb:hover {
+    background: rgba(16, 185, 129, 0.7);
+  }
+</style>
+
+<script>
+  const chatMessages = document.getElementById("chatMessages");
+  const chatForm = document.getElementById("chatForm");
+  const userMessageInput = document.getElementById("userMessage");
+
+  // Auto-scroll to bottom
+  function scrollToBottom() {
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // Add user message to chat
+  function addUserMessage(message) {
+    const messageDiv = document.createElement("div");
+    messageDiv.className = "flex gap-3 justify-end animate-fade-in";
+    messageDiv.innerHTML = `
+      <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl rounded-tr-none px-4 py-3 max-w-[80%]">
+        <p class="text-white text-sm leading-relaxed">${escapeHtml(message)}</p>
+      </div>
+      <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+        <i class="ri-user-line text-white text-sm"></i>
+      </div>
+    `;
+    chatMessages.appendChild(messageDiv);
+    scrollToBottom();
+  }
+
+  // Add bot message to chat
+  function addBotMessage(message, isHtml = false) {
+    const messageDiv = document.createElement("div");
+    messageDiv.className = "flex gap-3 animate-fade-in";
+    messageDiv.innerHTML = `
+      <div class="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+        <i class="ri-robot-line text-white text-sm"></i>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl rounded-tl-none px-4 py-3 max-w-[80%]">
+        <p class="text-white text-sm leading-relaxed">${
+          isHtml ? message : escapeHtml(message)
+        }</p>
+      </div>
+    `;
+    chatMessages.appendChild(messageDiv);
+    scrollToBottom();
+  }
+
+  // Add typing indicator
+  function addTypingIndicator() {
+    const typingDiv = document.createElement("div");
+    typingDiv.id = "typingIndicator";
+    typingDiv.className = "flex gap-3 animate-fade-in";
+    typingDiv.innerHTML = `
+      <div class="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+        <i class="ri-robot-line text-white text-sm"></i>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl rounded-tl-none px-4 py-3">
+        <div class="flex gap-1">
+          <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0s"></span>
+          <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+          <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.4s"></span>
+        </div>
+      </div>
+    `;
+    chatMessages.appendChild(typingDiv);
+    scrollToBottom();
+  }
+
+  // Remove typing indicator
+  function removeTypingIndicator() {
+    const typingIndicator = document.getElementById("typingIndicator");
+    if (typingIndicator) {
+      typingIndicator.remove();
+    }
+  }
+
+  // Escape HTML to prevent XSS
+  function escapeHtml(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Send message to backend
+  async function sendMessage(message) {
+    try {
+      const response = await fetch('{% url "ai-assistant" %}', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": "{{ csrf_token }}",
+        },
+        body: JSON.stringify({ message: message }),
+      });
+
+      const data = await response.json();
+
+      removeTypingIndicator();
+
+      if (data.response) {
+        addBotMessage(data.response, data.is_html || false);
+      } else {
+        addBotMessage("Sorry, I encountered an error. Please try again.");
+      }
+    } catch (error) {
+      removeTypingIndicator();
+      addBotMessage(
+        "Sorry, I'm having trouble connecting. Please try again later."
+      );
+    }
+  }
+
+  // Handle form submission
+  chatForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const message = userMessageInput.value.trim();
+    if (!message) return;
+
+    addUserMessage(message);
+    userMessageInput.value = "";
+
+    addTypingIndicator();
+
+    await sendMessage(message);
+  });
+
+  // Send suggested question
+  function sendSuggestedQuestion(question) {
+    userMessageInput.value = question;
+    chatForm.dispatchEvent(new Event("submit"));
+  }
+
+  // Initial scroll
+  scrollToBottom();
+</script>
+
+{% endblock %}
