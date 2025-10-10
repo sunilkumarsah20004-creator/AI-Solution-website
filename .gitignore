@@ -17,3 +17,7 @@ media/
 # Ignore Django migrations but keep package marker
 **/migrations/*
 !**/migrations/__init__.py
+
+
+env
+venv
