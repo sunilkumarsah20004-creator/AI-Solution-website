@@ -43,6 +43,14 @@ html {
   }
 }
 
+/* Navbar scroll effect */
+#navbar-bg {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease,
+    -webkit-backdrop-filter 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease !important;
+  will-change: background-color, backdrop-filter, box-shadow;
+}
+
 /* Utility classes for better performance */
 .line-clamp-2 {
   display: -webkit-box;

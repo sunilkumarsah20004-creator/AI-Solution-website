@@ -24,3 +24,5 @@ This repository hosts the **Django + Tailwind CSS landing page** for the AI-Solu
 - **Deployment Ready:** Works on platforms like Vercel, Heroku, or Docker
 
 ## Project Structure
+
+![Alt text](/base/static/base/images/project_structure.png)
